@@ -38,5 +38,7 @@ window.onload = function(e){
           + '<td><input onclick="removeItem(\'' + value + '\', this)" type=button value=X>';
     }
 
+    document.getElementById('result').innerHTML = output;
+
     headers();
 };
