@@ -1,9 +1,21 @@
+function headers(){
+    document.getElementById('result').innerHTML =
+      '<tr class=top>'
+        + '<td>Key'
+        + '<td>Value'
+        + '<td>Remove <input onclick=removeAll() type=button value=All>'
+      + document.getElementById('result').innerHTML;
+}
+
 function removeAll(){
     if(!confirm('window.localStorage.clear()?')){
         return;
     }
 
     window.localStorage.clear();
+
+    document.getElementById('result').innerHTML = '';
+    headers();
 }
 
 function removeItem(key, element){
@@ -26,10 +38,5 @@ window.onload = function(e){
           + '<td><input onclick="removeItem(\'' + value + '\', this)" type=button value=X>';
     }
 
-    document.getElementById('result').innerHTML = 
-      '<tr class=top>'
-        + '<td>Key'
-        + '<td>Value'
-        + '<td>Remove <input onclick=removeAll() type=button value=All>'
-      + output;
+    headers();
 };
