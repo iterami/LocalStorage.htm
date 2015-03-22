@@ -1,1 +1,1 @@
-# LocalStorage.htm
+`window.localStorage` management web tool.
