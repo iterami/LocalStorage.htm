@@ -1,18 +1,28 @@
+function clearAll(){
+    if(!confirm('window.localStorage.clear()')){
+        return;
+    }
+
+    window.localStorage.clear();
+}
+
 function headers(){
     document.getElementById('result').innerHTML =
       '<tr class=top>'
         + '<td>Key'
         + '<td>Value'
-        + '<td>Remove <input onclick=removeAll() type=button value=All>'
+        + '<td>Actions <input onclick=removeAll() type=button value=removeAll()><input onclick=clearAll() type=button value=window.localStorage.clear()>'
       + document.getElementById('result').innerHTML;
 }
 
 function removeAll(){
-    if(!confirm('window.localStorage.clear()?')){
+    if(!confirm('removeAll()?')){
         return;
     }
 
-    window.localStorage.clear();
+    for(var key in window.localStorage){
+        window.localStorage.removeItem(key);
+    }
 
     document.getElementById('result').innerHTML = '';
     headers();
@@ -30,12 +40,12 @@ function removeItem(key, element){
 window.onload = function(e){
     var output = '';
 
-    for(var value in window.localStorage){
-        output += '<tr><td id="' + value + '">'
-          + value
+    for(var key in window.localStorage){
+        output += '<tr><td id="' + key + '">'
+          + key
           + '<td>'
-          + window.localStorage.getItem(value)
-          + '<td><input onclick="removeItem(\'' + value + '\', this)" type=button value=X>';
+          + window.localStorage.getItem(key)
+          + '<td><input onclick="removeItem(\'' + key + '\', this)" type=button value=X>';
     }
 
     document.getElementById('result').innerHTML = output;
