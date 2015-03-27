@@ -16,6 +16,7 @@ td{
     border: 1px solid #444;
     max-width: 1px;
     padding: 5px;
+    vertical-align: top;
     word-wrap: break-word;
 }
 .top{
