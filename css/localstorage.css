@@ -14,7 +14,9 @@ table{
 }
 td{
     border: 1px solid #444;
+    max-width: 1px;
     padding: 5px;
+    word-wrap: break-word;
 }
 .top{
     background: #333;
