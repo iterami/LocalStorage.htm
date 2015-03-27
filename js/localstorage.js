@@ -1,5 +1,5 @@
 function clearAll(){
-    if(!confirm('window.localStorage.clear()')){
+    if(!confirm('window.localStorage.clear()?')){
         return;
     }
 
