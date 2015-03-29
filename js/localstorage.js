@@ -1,5 +1,5 @@
 function clearAll(){
-    if(!confirm('window.localStorage.clear()?')){
+    if(!window.confirm('window.localStorage.clear()?')){
         return;
     }
 
@@ -30,7 +30,7 @@ function refresh(){
 }
 
 function removeAll(){
-    if(!confirm('removeAll()?')){
+    if(!window.confirm('removeAll()?')){
         return;
     }
 
@@ -43,7 +43,7 @@ function removeAll(){
 }
 
 function removeItem(key, element){
-    if(!confirm('Remove ' + key + '?')){
+    if(!window.confirm('Remove ' + key + '?')){
         return;
     }
 
