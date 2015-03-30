@@ -9,7 +9,7 @@ function clearAll(){
 function headers(){
     document.getElementById('result').innerHTML =
       '<tr class=top>'
-        + '<td>Key <input onclick=refresh() type=button value=Refresh><input onclick=removeAll() type=button value=removeAll()><input onclick=clearAll() type=button value=window.localStorage.clear()>'
+        + '<td>Key <input onclick=refresh() type=button value="Refresh [R]"><input onclick=removeAll() type=button value=removeAll()><input onclick=clearAll() type=button value=window.localStorage.clear()>'
         + '<td>Value'
       + document.getElementById('result').innerHTML;
 }
@@ -50,5 +50,14 @@ function removeItem(key, element){
     window.localStorage.removeItem(key);
     element.parentElement.parentElement.remove();
 }
+
+window.onkeydown = function(e){
+    var key = e.keyCode || e.which;
+
+    // R: refresh.
+    if(key == 82){
+        refresh();
+    }
+};
 
 window.onload = refresh;
