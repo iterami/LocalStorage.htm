@@ -7,6 +7,7 @@ body{
 input{
     background: #000;
     color: #aaa;
+    cursor: pointer;
 }
 table{
     border-collapse: collapse;
@@ -21,6 +22,9 @@ td{
 }
 .top{
     background: #333;
+}
+tr:not(.top){
+    cursor: pointer;
 }
 tr:hover{
     background: #222;
