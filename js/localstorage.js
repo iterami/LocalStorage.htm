@@ -1,3 +1,5 @@
+'use strict';
+
 function check_checkbox(id){
     document.getElementById('checkbox-' + id).checked =
       !document.getElementById('checkbox-' + id).checked;
