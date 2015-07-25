@@ -83,7 +83,7 @@ window.onkeydown = function(e){
     var key = e.keyCode || e.which;
 
     // R: refresh.
-    if(key == 82){
+    if(key === 82){
         refresh();
     }
 };
