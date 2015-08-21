@@ -1,5 +1,16 @@
 'use strict';
 
+function checkAll(){
+    var checkboxes = document.getElementsByTagName('input');
+    for(var checkbox in checkboxes){
+        if(checkboxes[checkbox].type !== 'checkbox'){
+            continue;
+        }
+
+        checkboxes[checkbox].checked = true;
+    }
+}
+
 function check_checkbox(id){
     document.getElementById('checkbox-' + id).checked =
       !document.getElementById('checkbox-' + id).checked;
@@ -17,7 +28,7 @@ function clearAll(){
 function headers(){
     document.getElementById('result').innerHTML =
       '<tr class=top>'
-        + '<td>Key <input onclick=refresh() type=button value="Refresh [R]"><input onclick=removeAll() type=button value=removeAll()><input onclick=removeChecked() type=button value=removeChecked()><input onclick=clearAll() type=button value=window.localStorage.clear()>'
+        + '<td>Key <input onclick=refresh() type=button value="Refresh [R]"><input onclick=checkAll() type=button value=checkAll()><input onclick=removeAll() type=button value=removeAll()><input onclick=removeChecked() type=button value=removeChecked()><input onclick=clearAll() type=button value=window.localStorage.clear()>'
         + '<td>Value'
       + document.getElementById('result').innerHTML;
 }
@@ -28,7 +39,7 @@ function refresh(){
     for(var key in window.localStorage){
         output += '<tr onclick="check_checkbox(\''
           + key
-          + '\')"><td id="' + key + '"><input id="checkbox-'
+          + '\')"><td id="' + key + '"><input disabled id="checkbox-'
           + key
           + '" type=checkbox><input onclick="removeItem(\'' + key + '\', this)" type=button value=X> '
           + key
