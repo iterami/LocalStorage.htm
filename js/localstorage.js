@@ -12,6 +12,10 @@ function checkAll(){
 }
 
 function check_checkbox(id){
+    if(!document.body.contains(document.getElementById(id))){
+        return;
+    }
+
     document.getElementById('checkbox-' + id).checked =
       !document.getElementById('checkbox-' + id).checked;
 }
