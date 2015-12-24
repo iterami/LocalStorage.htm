@@ -3,11 +3,9 @@
 function checkAll(){
     var checkboxes = document.getElementsByTagName('input');
     for(var checkbox in checkboxes){
-        if(checkboxes[checkbox].type !== 'checkbox'){
-            continue;
+        if(checkboxes[checkbox].type === 'checkbox'){
+            checkboxes[checkbox].checked = true;
         }
-
-        checkboxes[checkbox].checked = true;
     }
 }
 
@@ -75,11 +73,9 @@ function removeChecked(){
     }
 
     for(var key in window.localStorage){
-        if(!document.getElementById('checkbox-' + key).checked){
-            continue;
+        if(document.getElementById('checkbox-' + key).checked){
+            window.localStorage.removeItem(key);
         }
-
-        window.localStorage.removeItem(key);
     }
 
     refresh();
