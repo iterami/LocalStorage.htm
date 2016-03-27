@@ -1,5 +1,5 @@
-LocalStorage.htm
-----------------
+iterami/LocalStorage.htm
+------------------------
 
 `window.localStorage` management web tool.
 
