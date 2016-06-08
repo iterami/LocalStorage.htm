@@ -33,9 +33,9 @@ function headers(){
         + '<td>Key <input onclick=refresh() type=button value="Refresh [R]">'
           + '<input onclick=checkAll() type=button value=checkAll()>'
           + '<input onclick=removeChecked() type=button value=removeChecked()>'
-          + '<input onclick=removeAll() type=button value=removeAll()>'
+        + '<td><input onclick=removeAll() type=button value=removeAll()>'
           + '<input onclick=clearAll() type=button value=window.localStorage.clear()>'
-        + '<td>Value'
+          + ' Value'
       + document.getElementById('result').innerHTML;
 }
 

@@ -8,3 +8,8 @@ iterami/LocalStorage.htm
 Action       | Key
 -------------|----
 Refresh List | R
+
+---
+
+Requires:
+* [iterami/common](https://github.com/iterami/common)
