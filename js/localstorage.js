@@ -94,13 +94,13 @@ function removeItem(key, element){
     element.parentElement.parentElement.remove();
 }
 
-window.onkeydown = function(e){
-    var key = e.keyCode || e.which;
-
-    // R: refresh.
-    if(key === 82){
-        refresh();
-    }
+window.onload = function(e){
+    init_input(
+      {
+        82: {
+          'todo': refresh,
+        },
+      }
+    );
+    refresh();
 };
-
-window.onload = refresh;
