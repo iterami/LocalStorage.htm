@@ -29,7 +29,7 @@ function clearAll(){
 
 function headers(){
     document.getElementById('result').innerHTML =
-      '<tr class=top>'
+      '<tr class=header>'
         + '<td>Key <input onclick=refresh() type=button value="Refresh [R]">'
           + '<input onclick=checkAll() type=button value=checkAll()>'
           + '<input onclick=removeChecked() type=button value=removeChecked()>'
