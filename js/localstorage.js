@@ -95,7 +95,7 @@ function removeItem(key, element){
 }
 
 window.onload = function(e){
-    init_input(
+    input_init(
       {
         82: {
           'todo': refresh,
