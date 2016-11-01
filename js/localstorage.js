@@ -49,8 +49,9 @@ function refresh(){
           + key
           + '" type=checkbox><input onclick="removeItem(\'' + key + '\', this)" type=button value=X> '
           + key
-          + '<td>'
-          + window.localStorage.getItem(key);
+          + '<td><textarea>'
+          + window.localStorage.getItem(key)
+          + '</textarea>';
     }
 
     document.getElementById('result').innerHTML = output;
