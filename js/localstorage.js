@@ -96,12 +96,12 @@ function removeItem(key, element){
 }
 
 window.onload = function(e){
-    input_init(
-      {
+    input_init({
+      'keybinds': {
         82: {
           'todo': refresh,
         },
-      }
-    );
+      },
+    });
     refresh();
 };
