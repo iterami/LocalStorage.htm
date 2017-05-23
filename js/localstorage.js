@@ -96,7 +96,7 @@ function removeItem(key, element){
 }
 
 window.onload = function(e){
-    input_init({
+    core_input_init({
       'keybinds': {
         82: {
           'todo': refresh,
