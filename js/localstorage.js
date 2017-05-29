@@ -95,8 +95,8 @@ function removeItem(key, element){
     element.parentElement.parentElement.remove();
 }
 
-window.onload = function(e){
-    core_input_init({
+function repo_init(){
+    core_input_binds_add({
       'keybinds': {
         82: {
           'todo': refresh,
