@@ -96,12 +96,13 @@ function removeItem(key, element){
 }
 
 function repo_init(){
-    core_input_binds_add({
+    core_events_bind({
       'keybinds': {
         82: {
           'todo': refresh,
         },
       },
     });
+
     refresh();
 };
