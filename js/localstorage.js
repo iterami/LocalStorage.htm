@@ -10,7 +10,7 @@ function checkAll(){
 }
 
 function check_checkbox(id){
-    if(!document.body.contains(document.getElementById(id))){
+    if(!document.getElementById(id)){
         return;
     }
 
