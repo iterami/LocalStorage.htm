@@ -97,15 +97,13 @@ function removeItem(key, element){
 
 function repo_init(){
     core_repo_init({
-      'title': 'LocalStorage.htm',
-    });
-    core_events_bind({
       'keybinds': {
         82: {
           'todo': refresh,
         },
       },
+      'title': 'LocalStorage.htm',
     });
 
     refresh();
-};
+}
