@@ -14,8 +14,8 @@ function check_checkbox(id){
         return;
     }
 
-    document.getElementById('checkbox-' + id).checked =
-      !document.getElementById('checkbox-' + id).checked;
+    var element = document.getElementById('checkbox-' + id);
+    element.checked = !element.checked;
 }
 
 function clearAll(){
@@ -28,7 +28,8 @@ function clearAll(){
 }
 
 function headers(){
-    document.getElementById('result').innerHTML =
+    var element = document.getElementById('result');
+    element.innerHTML =
       '<tr class=header>'
         + '<td>Key <input onclick=refresh() type=button value="Refresh [R]">'
           + '<input onclick=checkAll() type=button value=checkAll()>'
@@ -36,7 +37,7 @@ function headers(){
         + '<td><input onclick=removeAll() type=button value=removeAll()>'
           + '<input onclick=clearAll() type=button value=window.localStorage.clear()>'
           + ' Value'
-      + document.getElementById('result').innerHTML;
+      + element.innerHTML;
 }
 
 function refresh(){
