@@ -5,7 +5,14 @@
 <link href=../common/css/core.css rel=stylesheet>
 <link href=../common/css/dom.css rel=stylesheet>
 
-<table class=left id=result></table>
+<table class=left>
+  <thead>
+    <tr class=header>
+      <td>Key <input id=refresh type=button value="Refresh [R]"><input id=checkAll type=button value=checkAll()><input id=removeChecked type=button value=removeChecked()>
+      <td class=right><input id=removeAll type=button value=removeAll()><input id=clearAll type=button value=window.localStorage.clear()>Value
+  </thead>
+  <tbody id=result></tbody>
+</table>
 
 <script src=../common/js/core.js></script>
 <script src=js/main.js></script>

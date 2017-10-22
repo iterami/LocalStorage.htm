@@ -27,19 +27,6 @@ function clearAll(){
     refresh();
 }
 
-function headers(){
-    var element = document.getElementById('result');
-    element.innerHTML =
-      '<tr class=header>'
-        + '<td>Key <input onclick=refresh() type=button value="Refresh [R]">'
-          + '<input onclick=checkAll() type=button value=checkAll()>'
-          + '<input onclick=removeChecked() type=button value=removeChecked()>'
-        + '<td><input onclick=removeAll() type=button value=removeAll()>'
-          + '<input onclick=clearAll() type=button value=window.localStorage.clear()>'
-          + ' Value'
-      + element.innerHTML;
-}
-
 function refresh(){
     var output = '';
 
@@ -56,8 +43,6 @@ function refresh(){
     }
 
     document.getElementById('result').innerHTML = output;
-
-    headers();
 }
 
 function removeAll(){
@@ -69,8 +54,7 @@ function removeAll(){
         window.localStorage.removeItem(key);
     }
 
-    document.getElementById('result').innerHTML = '';
-    headers();
+    refresh();
 }
 
 function removeChecked(){
