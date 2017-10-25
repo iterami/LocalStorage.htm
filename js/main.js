@@ -2,21 +2,21 @@
 
 function repo_init(){
     core_repo_init({
-      'info-events': {
+      'events': {
         'checkAll': {
-          'todo': checkAll,
+          'onclick': checkAll,
         },
         'clearAll': {
-          'todo': clearAll,
+          'onclick': clearAll,
         },
         'refresh': {
-          'todo': refresh,
+          'onclick': refresh,
         },
         'removeAll': {
-          'todo': removeAll,
+          'onclick': removeAll,
         },
         'removeChecked': {
-          'todo': removeChecked,
+          'onclick': removeChecked,
         },
       },
       'keybinds': {
