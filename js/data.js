@@ -31,6 +31,10 @@ function refresh(){
     let output = '';
 
     for(let key in window.localStorage){
+        if(!window.localStorage.hasOwnProperty(key)){
+            continue;
+        }
+
         output += '<tr onclick="check_checkbox(\''
           + key
           + '\')"><td id="' + key + '"><input disabled id="checkbox-'
