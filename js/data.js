@@ -55,6 +55,10 @@ function removeAll(){
     }
 
     for(let key in window.localStorage){
+        if(!window.localStorage.hasOwnProperty(key)){
+            continue;
+        }
+
         window.localStorage.removeItem(key);
     }
 
@@ -67,6 +71,10 @@ function removeChecked(){
     }
 
     for(let key in window.localStorage){
+        if(!window.localStorage.hasOwnProperty(key)){
+            continue;
+        }
+
         if(document.getElementById('checkbox-' + key).checked){
             window.localStorage.removeItem(key);
         }
