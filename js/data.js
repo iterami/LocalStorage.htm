@@ -39,10 +39,10 @@ function refresh(){
           + key
           + '\')"><td id="' + key + '">'
           + key
-          + '<br><input disabled id="checkbox-'
+          + '<br><input onclick="removeItem(\'' + key + '\', this)" type=button value=X><input disabled id="checkbox-'
           + key
-          + '" type=checkbox><input onclick="removeItem(\'' + key + '\', this)" type=button value=X>'
-          + '<td><textarea>'
+          + '" type=checkbox>'
+          + '<input onclick="updateItem(\'' + key + '\')" type=button value=Save><td><textarea id="textarea-' + key + '">'
           + window.localStorage.getItem(key)
           + '</textarea>';
     }
@@ -91,4 +91,16 @@ function removeItem(key, element){
 
     window.localStorage.removeItem(key);
     element.parentElement.parentElement.remove();
+}
+
+function updateItem(key){
+    if(!window.confirm('Save ' + key + '?')){
+        return;
+    }
+
+    window.localStorage.setItem(
+      key,
+      document.getElementById('textarea-' + key).value
+    );
+    console.log(document.getElementById('textarea-' + key).value);
 }
