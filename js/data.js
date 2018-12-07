@@ -35,14 +35,13 @@ function refresh(){
             continue;
         }
 
-        output += '<tr id="tr-' + key + '" onclick="check_checkbox(\''
+        output += '<tr id="' + key + '" onclick="check_checkbox(\''
           + key
-          + '\')"><td id="' + key + '">'
+          + '\')"><td>'
           + key
           + '<br><input onclick="removeItem(\'' + key + '\')" type=button value=X><input disabled id="checkbox-'
           + key
-          + '" type=checkbox>'
-          + '<input onclick="updateItem(\'' + key + '\')" type=button value=Save><td><textarea id="textarea-' + key + '">'
+          + '" type=checkbox><input onclick="updateItem(\'' + key + '\')" type=button value=Save><td><textarea id="textarea-' + key + '">'
           + window.localStorage.getItem(key)
           + '</textarea>';
     }
@@ -90,7 +89,7 @@ function removeItem(key){
     }
 
     window.localStorage.removeItem(key);
-    document.getElementById('tr-' + key).remove();
+    document.getElementById(key).remove();
 }
 
 function updateItem(key){
