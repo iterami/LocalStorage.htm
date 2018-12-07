@@ -37,10 +37,11 @@ function refresh(){
 
         output += '<tr onclick="check_checkbox(\''
           + key
-          + '\')"><td id="' + key + '"><input disabled id="checkbox-'
+          + '\')"><td id="' + key + '">'
           + key
-          + '" type=checkbox><input onclick="removeItem(\'' + key + '\', this)" type=button value=X> '
+          + '<br><input disabled id="checkbox-'
           + key
+          + '" type=checkbox><input onclick="removeItem(\'' + key + '\', this)" type=button value=X>'
           + '<td><textarea>'
           + window.localStorage.getItem(key)
           + '</textarea>';
