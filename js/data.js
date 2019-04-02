@@ -35,10 +35,12 @@ function refresh(){
             continue;
         }
 
+        let repository = key.slice(0, key.indexOf('-'));
+
         output += '<tr id="' + key + '" onclick="check_checkbox(\''
           + key
           + '\')"><td>'
-          + key
+          + '<a href="../' + repository + '/index.htm">' + key + '</a>'
           + '<br><input onclick="removeItem(\'' + key + '\')" type=button value=X><input disabled id="checkbox-'
           + key
           + '" type=checkbox><input onclick="updateItem(\'' + key + '\')" type=button value=Save><td><textarea id="textarea-' + key + '">'
