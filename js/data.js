@@ -35,7 +35,10 @@ function refresh(){
             continue;
         }
 
-        let repository = key.slice(0, key.indexOf('-'));
+        let repository = key.slice(
+          0,
+          key.indexOf('.htm-') + 4
+        );
 
         output += '<tr id="' + key + '" onclick="check_checkbox(\''
           + key
