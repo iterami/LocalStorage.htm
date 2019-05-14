@@ -28,12 +28,23 @@ function clearAll(){
 }
 
 function refresh(){
+    let keys = [];
     let output = '';
 
     for(let key in window.localStorage){
         if(!window.localStorage.hasOwnProperty(key)){
             continue;
         }
+
+        keys.push(key);
+    }
+
+    keys = core_sort_strings({
+      'array': keys,
+    });
+
+    for(let key in keys){
+        key = keys[key];
 
         let repository = key.slice(
           0,
