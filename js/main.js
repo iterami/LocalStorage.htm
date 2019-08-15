@@ -3,6 +3,9 @@
 function repo_init(){
     core_repo_init({
       'events': {
+        'add': {
+          'onclick': add,
+        },
         'checkAll': {
           'onclick': checkAll,
         },

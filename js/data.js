@@ -1,5 +1,28 @@
 'use strict';
 
+function add(){
+    let key = window.prompt(
+      'Key:',
+      ''
+    );
+    let value = window.prompt(
+      'Value:',
+      ''
+    );
+
+    if(key === null
+      || key.length === 0
+      || value === null){
+        return;
+    }
+
+    window.localStorage.setItem(
+      key,
+      value
+    );
+    refresh();
+}
+
 function checkAll(){
     let checkboxes = document.getElementsByTagName('input');
     for(let checkbox in checkboxes){
