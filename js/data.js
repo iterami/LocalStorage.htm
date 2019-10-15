@@ -5,14 +5,16 @@ function add(){
       'Key:',
       ''
     );
+    if(key === null
+      || key.length === 0){
+        return;
+    }
+
     let value = window.prompt(
       'Value:',
       ''
     );
-
-    if(key === null
-      || key.length === 0
-      || value === null){
+    if(value === null){
         return;
     }
 
