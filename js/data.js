@@ -35,11 +35,12 @@ function checkAll(){
 }
 
 function check_checkbox(id){
-    if(!document.getElementById(id)){
+    let element = document.getElementById('checkbox-' + id);
+
+    if(!element){
         return;
     }
 
-    let element = document.getElementById('checkbox-' + id);
     element.checked = !element.checked;
 }
 
@@ -142,5 +143,4 @@ function updateItem(key){
       key,
       document.getElementById('textarea-' + key).value
     );
-    console.log(document.getElementById('textarea-' + key).value);
 }
