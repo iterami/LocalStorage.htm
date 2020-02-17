@@ -1,7 +1,7 @@
 'use strict';
 
 function add(){
-    let key = window.prompt(
+    const key = window.prompt(
       'Key:',
       ''
     );
@@ -10,7 +10,7 @@ function add(){
         return;
     }
 
-    let value = window.prompt(
+    const value = window.prompt(
       'Value:',
       ''
     );
@@ -26,8 +26,8 @@ function add(){
 }
 
 function checkAll(){
-    let checkboxes = document.getElementsByTagName('input');
-    for(let checkbox in checkboxes){
+    const checkboxes = document.getElementsByTagName('input');
+    for(const checkbox in checkboxes){
         if(checkboxes[checkbox].type === 'checkbox'){
             checkboxes[checkbox].checked = true;
         }
@@ -35,7 +35,7 @@ function checkAll(){
 }
 
 function check_checkbox(id){
-    let element = document.getElementById('checkbox-' + id);
+    const element = document.getElementById('checkbox-' + id);
 
     if(!element){
         return;
@@ -57,7 +57,7 @@ function refresh(){
     let keys = [];
     let output = '';
 
-    for(let key in window.localStorage){
+    for(const key in window.localStorage){
         if(!window.localStorage.hasOwnProperty(key)){
             continue;
         }
@@ -72,7 +72,7 @@ function refresh(){
     for(let key in keys){
         key = keys[key];
 
-        let repository = key.slice(
+        const repository = key.slice(
           0,
           key.indexOf('.htm-') + 4
         );
@@ -96,7 +96,7 @@ function removeAll(){
         return;
     }
 
-    for(let key in window.localStorage){
+    for(const key in window.localStorage){
         if(!window.localStorage.hasOwnProperty(key)){
             continue;
         }
@@ -112,7 +112,7 @@ function removeChecked(){
         return;
     }
 
-    for(let key in window.localStorage){
+    for(const key in window.localStorage){
         if(!window.localStorage.hasOwnProperty(key)){
             continue;
         }
