@@ -1,7 +1,7 @@
 'use strict';
 
 function add(){
-    const key = window.prompt(
+    const key = globalThis.prompt(
       'Key:',
       ''
     );
@@ -10,7 +10,7 @@ function add(){
         return;
     }
 
-    const value = window.prompt(
+    const value = globalThis.prompt(
       'Value:',
       ''
     );
@@ -18,7 +18,7 @@ function add(){
         return;
     }
 
-    window.localStorage.setItem(
+    globalThis.localStorage.setItem(
       key,
       value
     );
@@ -45,11 +45,11 @@ function check_checkbox(id){
 }
 
 function clearAll(){
-    if(!window.confirm('window.localStorage.clear()?')){
+    if(!globalThis.confirm('globalThis.localStorage.clear()?')){
         return;
     }
 
-    window.localStorage.clear();
+    globalThis.localStorage.clear();
     refresh();
 }
 
@@ -57,8 +57,8 @@ function refresh(){
     let keys = [];
     let output = '';
 
-    for(const key in window.localStorage){
-        if(!window.localStorage.hasOwnProperty(key)){
+    for(const key in globalThis.localStorage){
+        if(!globalThis.localStorage.hasOwnProperty(key)){
             continue;
         }
 
@@ -84,7 +84,7 @@ function refresh(){
           + '<br><input onclick="removeItem(\'' + key + '\')" type=button value=X><input disabled id="checkbox-'
           + key
           + '" type=checkbox><input onclick="updateItem(\'' + key + '\')" type=button value=Save><td><textarea id="textarea-' + key + '">'
-          + window.localStorage.getItem(key)
+          + globalThis.localStorage.getItem(key)
           + '</textarea>';
     }
 
@@ -92,33 +92,33 @@ function refresh(){
 }
 
 function removeAll(){
-    if(!window.confirm('removeAll()?')){
+    if(!globalThis.confirm('removeAll()?')){
         return;
     }
 
-    for(const key in window.localStorage){
-        if(!window.localStorage.hasOwnProperty(key)){
+    for(const key in globalThis.localStorage){
+        if(!globalThis.localStorage.hasOwnProperty(key)){
             continue;
         }
 
-        window.localStorage.removeItem(key);
+        globalThis.localStorage.removeItem(key);
     }
 
     refresh();
 }
 
 function removeChecked(){
-    if(!window.confirm('removeChecked()?')){
+    if(!globalThis.confirm('removeChecked()?')){
         return;
     }
 
-    for(const key in window.localStorage){
-        if(!window.localStorage.hasOwnProperty(key)){
+    for(const key in globalThis.localStorage){
+        if(!globalThis.localStorage.hasOwnProperty(key)){
             continue;
         }
 
         if(document.getElementById('checkbox-' + key).checked){
-            window.localStorage.removeItem(key);
+            globalThis.localStorage.removeItem(key);
         }
     }
 
@@ -126,20 +126,20 @@ function removeChecked(){
 }
 
 function removeItem(key){
-    if(!window.confirm('Remove ' + key + '?')){
+    if(!globalThis.confirm('Remove ' + key + '?')){
         return;
     }
 
-    window.localStorage.removeItem(key);
+    globalThis.localStorage.removeItem(key);
     document.getElementById(key).remove();
 }
 
 function updateItem(key){
-    if(!window.confirm('Save ' + key + '?')){
+    if(!globalThis.confirm('Save ' + key + '?')){
         return;
     }
 
-    window.localStorage.setItem(
+    globalThis.localStorage.setItem(
       key,
       document.getElementById('textarea-' + key).value
     );
