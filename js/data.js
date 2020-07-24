@@ -65,6 +65,26 @@ function exportAll(){
     );
 }
 
+function importItems(){
+    let json = globalThis.prompt(
+      'Import JSON:',
+      '{}'
+    );
+    if(json === null
+      || json.length === 0){
+        return;
+    }
+
+    json = JSON.parse(json);
+    for(const key in json){
+        globalThis.localStorage.setItem(
+          key,
+          json[key]
+        );
+    }
+    refresh();
+}
+
 function refresh(){
     let keys = [];
     let output = '';

@@ -15,6 +15,9 @@ function repo_init(){
         'exportAll': {
           'onclick': exportAll,
         },
+        'importItems': {
+          'onclick': importItems,
+        },
         'refresh': {
           'onclick': refresh,
         },
