@@ -45,12 +45,24 @@ function check_checkbox(id){
 }
 
 function clearAll(){
-    if(!globalThis.confirm('globalThis.localStorage.clear()?')){
+    if(!globalThis.confirm('Clear all localStorage items?')){
         return;
     }
 
     globalThis.localStorage.clear();
     refresh();
+}
+
+function exportAll(){
+    const exported = {};
+    for(const key in globalThis.localStorage){
+        exported[key] = globalThis.localStorage.getItem(key);
+    }
+
+    globalThis.prompt(
+      'Exported iterami localStorage:',
+      JSON.stringify(exported)
+    );
 }
 
 function refresh(){
@@ -92,7 +104,7 @@ function refresh(){
 }
 
 function removeAll(){
-    if(!globalThis.confirm('removeAll()?')){
+    if(!globalThis.confirm('Remove all iterami localStorage items?')){
         return;
     }
 
@@ -108,7 +120,7 @@ function removeAll(){
 }
 
 function removeChecked(){
-    if(!globalThis.confirm('removeChecked()?')){
+    if(!globalThis.confirm('Remove checked iterami localStorage items?')){
         return;
     }
 

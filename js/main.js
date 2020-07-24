@@ -12,6 +12,9 @@ function repo_init(){
         'clearAll': {
           'onclick': clearAll,
         },
+        'exportAll': {
+          'onclick': exportAll,
+        },
         'refresh': {
           'onclick': refresh,
         },
