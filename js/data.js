@@ -56,6 +56,10 @@ function clearAll(){
 function exportAll(){
     const exported = {};
     for(const key in globalThis.localStorage){
+        if(!globalThis.localStorage.hasOwnProperty(key)){
+            continue;
+        }
+
         exported[key] = globalThis.localStorage.getItem(key);
     }
 
