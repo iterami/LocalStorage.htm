@@ -26,10 +26,10 @@ function add(){
 }
 
 function checkAll(){
-    const checkboxes = document.getElementsByTagName('input');
-    for(const checkbox in checkboxes){
-        if(checkboxes[checkbox].type === 'checkbox'){
-            checkboxes[checkbox].checked = true;
+    const inputs = document.getElementsByTagName('input');
+    for(const input in inputs){
+        if(inputs[input].type === 'checkbox'){
+            inputs[input].checked = true;
         }
     }
 }
@@ -113,13 +113,10 @@ function refresh(){
           key.indexOf('.htm-') + 4
         );
 
-        output += '<tr id="' + key + '" onclick="check_checkbox(\''
+        output += '<tr id="' + key + '"><td>'
+          + '<a href="../' + repository + '/index.htm">' + key + '</a><br><input onclick="removeItem(\'' + key + '\')" type=button value=X><input id="checkbox-'
           + key
-          + '\')"><td>'
-          + '<a href="../' + repository + '/index.htm">' + key + '</a>'
-          + '<br><input onclick="removeItem(\'' + key + '\')" type=button value=X><input disabled id="checkbox-'
-          + key
-          + '" type=checkbox><input onclick="updateItem(\'' + key + '\')" type=button value=Save><td><textarea id="textarea-' + key + '">'
+          + '" type=checkbox><br><input onclick="updateItem(\'' + key + '\')" type=button value=Save><td><textarea id="textarea-' + key + '">'
           + globalThis.localStorage.getItem(key)
           + '</textarea>';
     }
