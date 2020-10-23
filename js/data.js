@@ -34,16 +34,6 @@ function checkAll(){
     }
 }
 
-function check_checkbox(id){
-    const element = document.getElementById('checkbox-' + id);
-
-    if(!element){
-        return;
-    }
-
-    element.checked = !element.checked;
-}
-
 function clearAll(){
     if(!globalThis.confirm('Clear all localStorage items?')){
         return;
