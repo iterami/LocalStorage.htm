@@ -25,15 +25,6 @@ function add(){
     refresh();
 }
 
-function checkAll(){
-    const inputs = document.getElementsByTagName('input');
-    for(const input in inputs){
-        if(inputs[input].type === 'checkbox'){
-            inputs[input].checked = true;
-        }
-    }
-}
-
 function clearAll(){
     if(!globalThis.confirm('Clear all localStorage items?')){
         return;
@@ -130,8 +121,8 @@ function removeAll(){
     refresh();
 }
 
-function removeChecked(){
-    if(!globalThis.confirm('Remove checked iterami localStorage items?')){
+function removeSelected(){
+    if(!globalThis.confirm('Remove selected iterami localStorage items?')){
         return;
     }
 
@@ -166,4 +157,13 @@ function updateItem(key){
       key,
       document.getElementById('textarea-' + key).value
     );
+}
+
+function selectAll(){
+    const inputs = document.getElementsByTagName('input');
+    for(const input in inputs){
+        if(inputs[input].type === 'checkbox'){
+            inputs[input].checked = true;
+        }
+    }
 }

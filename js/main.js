@@ -6,9 +6,6 @@ function repo_init(){
         'add': {
           'onclick': add,
         },
-        'checkAll': {
-          'onclick': checkAll,
-        },
         'clearAll': {
           'onclick': clearAll,
         },
@@ -24,8 +21,11 @@ function repo_init(){
         'removeAll': {
           'onclick': removeAll,
         },
-        'removeChecked': {
-          'onclick': removeChecked,
+        'removeSelected': {
+          'onclick': removeSelected,
+        },
+        'selectAll': {
+          'onclick': selectAll,
         },
       },
       'keybinds': {
