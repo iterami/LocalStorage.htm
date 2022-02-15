@@ -30,7 +30,11 @@ function repo_init(){
       },
       'keybinds': {
         82: {
-          'todo': refresh,
+          'todo': function(){
+              if(document.activeElement.tagName.toLowerCase() !== 'textarea'){
+                  refresh();
+              }
+          },
         },
       },
       'title': 'LocalStorage.htm',
