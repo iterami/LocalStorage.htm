@@ -93,13 +93,14 @@ function refresh(){
           0,
           key.indexOf('.htm-') + 4
         );
+        const value = globalThis.localStorage.getItem(key);
 
         output += '<tr id="' + key + '"><td>'
-          + '<a href="../' + repository + '/index.htm">' + key + '</a><br><input onclick="removeItem(\'' + key + '\')" type=button value=X><input id="checkbox-'
+          + '<a href="../' + repository + '/index.htm">' + key + '</a><br><input id="checkbox-'
           + key
-          + '" type=checkbox><br><input onclick="updateItem(\'' + key + '\')" type=button value=Save><td><textarea id="textarea-' + key + '">'
-          + globalThis.localStorage.getItem(key)
-          + '</textarea>';
+          + '" type=checkbox><input onclick="removeItem(\'' + key + '\')" type=button value=X><input onclick="updateItem(\'' + key + '\')" type=button value=Save>'
+          + '<br>Length: ' + value.length
+          + '<td><textarea id="textarea-' + key + '">' + value + '</textarea>';
     }
 
     document.getElementById('result').innerHTML = output;
