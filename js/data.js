@@ -89,14 +89,14 @@ function refresh(){
     for(let key in keys){
         key = keys[key];
 
-        const repository = key.slice(
+        const repo = key.slice(
           0,
           key.indexOf('.htm-') + 4
         );
         const value = globalThis.localStorage.getItem(key);
 
         output += '<tr id="' + key + '"><td>'
-          + '<a href="../' + repository + '/index.htm">' + key + '</a><br><input id="checkbox-'
+          + '<a href="../' + repo + '/index.htm">' + key + '</a><br><input id="checkbox-'
           + key
           + '" type=checkbox><input onclick="removeItem(\'' + key + '\')" type=button value=X><input onclick="updateItem(\'' + key + '\')" type=button value=Save>'
           + '<br>Length: ' + value.length
