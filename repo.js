@@ -178,7 +178,7 @@ function repo_init(){
         },
       },
       'keybinds': {
-        82: {
+        'KeyR': {
           'todo': function(){
               if(document.activeElement.tagName.toLowerCase() !== 'textarea'){
                   refresh();
