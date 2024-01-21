@@ -98,7 +98,7 @@ function refresh(){
         output += '<tr id="' + key + '"><td>'
           + '<a href="../' + repo + '/index.htm">' + key + '</a><br><input id="checkbox-'
           + key
-          + '" type=checkbox><input onclick="removeItem(\'' + key + '\')" type=button value=X><input onclick="updateItem(\'' + key + '\')" type=button value=Save>'
+          + '" type=checkbox><button onclick="removeItem(\'' + key + '\')" type=button>X</button><button onclick="updateItem(\'' + key + '\')" type=button>Save</button>'
           + '<br>Length: ' + value.length
           + '<td><textarea id="textarea-' + key + '">' + value + '</textarea>';
     }
