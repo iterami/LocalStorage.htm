@@ -71,7 +71,7 @@ function importItems(){
 }
 
 function refresh(){
-    let keys = [];
+    const keys = [];
     let output = '';
 
     for(const key in globalThis.localStorage){
@@ -82,8 +82,9 @@ function refresh(){
         keys.push(key);
     }
 
-    keys = core_sort_strings({
+    core_sort_strings({
       'array': keys,
+      'clone': false,
     });
 
     for(let key in keys){
