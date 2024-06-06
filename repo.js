@@ -104,7 +104,7 @@ function refresh(){
           + '<td><textarea id="textarea-' + key + '">' + value + '</textarea>';
     }
 
-    document.getElementById('result').innerHTML = output;
+    core_elements['result'].innerHTML = output;
 }
 
 function removeAll(){
@@ -188,6 +188,9 @@ function repo_init(){
         },
       },
       'title': 'LocalStorage.htm',
+      'ui-elements': [
+        'result',
+      ],
     });
 
     refresh();
