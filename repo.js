@@ -37,7 +37,7 @@ function clearAll(){
 function exportAll(){
     const exported = {};
     for(const key in globalThis.localStorage){
-        if(!globalThis.localStorage.hasOwnProperty(key)){
+        if(!Object.hasOwn(globalThis.localStorage, key)){
             continue;
         }
 
@@ -75,7 +75,7 @@ function refresh(){
     let output = '';
 
     for(const key in globalThis.localStorage){
-        if(!globalThis.localStorage.hasOwnProperty(key)){
+        if(!Object.hasOwn(globalThis.localStorage, key)){
             continue;
         }
 
@@ -113,7 +113,7 @@ function removeAll(){
     }
 
     for(const key in globalThis.localStorage){
-        if(!globalThis.localStorage.hasOwnProperty(key)){
+        if(!Object.hasOwn(globalThis.localStorage, key)){
             continue;
         }
 
@@ -129,7 +129,7 @@ function removeSelected(){
     }
 
     for(const key in globalThis.localStorage){
-        if(!globalThis.localStorage.hasOwnProperty(key)){
+        if(!Object.hasOwn(globalThis.localStorage, key)){
             continue;
         }
 
