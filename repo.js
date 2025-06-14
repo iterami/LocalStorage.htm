@@ -104,7 +104,7 @@ function refresh(){
           + '<td><textarea id="textarea-' + key + '">' + value + '</textarea>';
     }
 
-    core_elements['result'].innerHTML = output;
+    core_elements.result.innerHTML = output;
 }
 
 function removeAll(){
