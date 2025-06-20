@@ -188,7 +188,7 @@ function repo_init(){
         },
       },
       'title': 'LocalStorage.htm',
-      'ui-elements': [
+      'ui_elements': [
         'result',
       ],
     });
