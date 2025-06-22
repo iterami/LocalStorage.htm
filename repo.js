@@ -92,7 +92,7 @@ function refresh(){
 
         const repo = key.slice(
           0,
-          key.indexOf('.htm-') + 4
+          key.indexOf('.htm_') + 4
         );
         const value = globalThis.localStorage.getItem(key);
 
