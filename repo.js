@@ -180,7 +180,7 @@ function repo_init(){
       },
       'keybinds': {
         'KeyR': {
-          'todo': function(){
+          'down': function(){
               if(document.activeElement.tagName.toLowerCase() !== 'textarea'){
                   refresh();
               }
