@@ -142,7 +142,7 @@ function removeSelected(){
 }
 
 function removeItem(key){
-    if(!globalThis.confirm('Remove ' + key + '?')){
+    if(!globalThis.confirm('Remove "' + key + '"?')){
         return;
     }
 
@@ -197,7 +197,7 @@ function repo_init(){
 }
 
 function updateItem(key){
-    if(!globalThis.confirm('Save ' + key + '?')){
+    if(!globalThis.confirm('Save "' + key + '"?')){
         return;
     }
 
