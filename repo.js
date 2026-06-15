@@ -36,13 +36,10 @@ function clearAll(){
 
 function exportAll(){
     const exported = {};
-    for(const key in globalThis.localStorage){
-        if(!Object.hasOwn(globalThis.localStorage, key)){
-            continue;
-        }
 
+    loopAll(function(key){
         exported[key] = globalThis.localStorage.getItem(key);
-    }
+    });
 
     globalThis.prompt(
       'Exported iterami localStorage:',
@@ -70,17 +67,21 @@ function importItems(){
     refresh();
 }
 
+function loopAll(todo){
+    for(const key in globalThis.localStorage){
+        if(Object.prototype.hasOwnProperty.call(globalThis.localStorage, key)){
+            todo(key);
+        }
+    }
+}
+
 function refresh(){
     const keys = [];
     let output = '';
 
-    for(const key in globalThis.localStorage){
-        if(!Object.hasOwn(globalThis.localStorage, key)){
-            continue;
-        }
-
+    loopAll(function(key){
         keys.push(key);
-    }
+    });
 
     core_sort_strings({
       'array': keys,
@@ -112,14 +113,9 @@ function removeAll(){
         return;
     }
 
-    for(const key in globalThis.localStorage){
-        if(!Object.hasOwn(globalThis.localStorage, key)){
-            continue;
-        }
-
+    loopAll(function(key){
         globalThis.localStorage.removeItem(key);
-    }
-
+    });
     refresh();
 }
 
@@ -128,16 +124,11 @@ function removeSelected(){
         return;
     }
 
-    for(const key in globalThis.localStorage){
-        if(!Object.hasOwn(globalThis.localStorage, key)){
-            continue;
-        }
-
+    loopAll(function(key){
         if(document.getElementById('checkbox-' + key).checked){
             globalThis.localStorage.removeItem(key);
         }
-    }
-
+    });
     refresh();
 }
 
