@@ -88,9 +88,7 @@ function refresh(){
       'clone': false,
     });
 
-    for(let key in keys){
-        key = keys[key];
-
+    for(const key of keys){
         const repo = key.slice(
           0,
           key.indexOf('.htm_') + 4
